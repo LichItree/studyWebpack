@@ -1,0 +1,91 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+  }
+  *::after{
+    box-sizing:border-box;
+  }
+  *::before{
+    box-sizing:border-box;
+  }
+  body{
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+  }
+  .preview-wrapper{
+    flex:1;
+    height:50%;
+}
+.code-wrapper{
+    flex:1;
+    height:50%;
+    /* 找了一晚上bug，就是这个逗号，但是为什么浏览器不提醒我！！！！ */
+}
+#code{
+    overflow:hidden;
+    height:100%;
+    padding:0px 0px 16px 0px;
+}
+.preview{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    width: 100%;
+    height: 165px;
+    position:relative;
+   }
+  
+.wrapper>:not(:last-child){
+   z-index:1;
+}
+.eye{
+    background:#2e2e2e;
+    border:2px solid #000000;
+    position:absolute;
+}
+.eye::before{
+    display:block;
+    content:'';
+    border:2px solid #000000;
+    position:absolute;
+    top:-1px;
+  }
+.cheek{
+    border:2px solid #000000;
+    position:absolute;
+  }
+.lowerLip-wrapper{
+    position: absolute;
+    overflow:hidden;
+  }
+.lowerLip{
+    position: absolute;
+    overflow:hidden;
+  }
+  .lowerLip::after{
+    content: '';
+    position: absolute;
+  }
+  .actions{
+      position: absolute;
+      right:0px;
+      top:0px;
+      display:flex;
+      flex-direction: column;
+  }
+  .actions>button{
+      margin: 10px;
+      background: #ddd;
+      padding: 8px 10px;
+      border-color:none;
+  }
+  .actions>button.active{
+      border:1px solid red;
+  }
+  
